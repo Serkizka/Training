@@ -4,8 +4,20 @@
 
 <div class="overlay" id="overlay">
     <div class="modal" id="modal">
+
         <button id="modal-close">X</button>
-        Play
+
+        <div class="form">
+            <label for="guessField">Guess a number : </label>
+            <input type="text" id="guessField" class="guessField">
+            <button type="submit" value="Submit guess" class="guessSubmit">submit</button>
+        </div>
+
+        <div class="resultParas text-center lead">
+            <p class="guesses"></p>
+            <p class="lastResult"></p>
+            <p class="lowOrHi"></p>
+        </div>
     </div>
 </div>
 
