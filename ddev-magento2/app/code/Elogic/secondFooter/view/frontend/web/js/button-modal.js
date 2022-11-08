@@ -30,15 +30,15 @@ guessField.focus();
 function checkGuess() {
 
     if (guessCount === 1 || guessCount > 1) {
-        guesses.textContent = 'Previous guesses: ';
+        guesses.textContent = 'Last guesses: ';
     }
     guesses.textContent += userGuess + ' ';
 
     if (userGuess === randomNumber) {
-        guesses.textContent = 'Previous guesses: ';
+        guesses.textContent = 'Last guesses: ';
         alert(randomNumber);
     } else {
-        lastResult.textContent = "Oops! You're Wrong!";
+        lastResult.textContent = "Wrong!";
         alert(randomNumber);
     }
     guessField.value = '';
