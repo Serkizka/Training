@@ -4,8 +4,10 @@
 <!--<script src="Elogic_secondFooter::js/button-modal.js"/>-->
     </head>
     <body>
-        <referenceContainer name="footer">
-            <block class="Magento\Framework\View\Element\Template" name="custom_jquery" after="-" template="Elogic_secondFooter::footer2.phtml"/>
+        <referenceContainer name="before.body.end">
+            <container name="newFooter" htmlTag="div" before="-" htmlClass="newFooter">
+                <block name="footer2" template="Elogic_secondFooter::footer2.phtml"/>
+            </container>
         </referenceContainer>
     </body>
 </page>

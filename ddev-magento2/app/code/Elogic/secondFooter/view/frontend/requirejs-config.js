@@ -1,7 +1,8 @@
 var config = {
     map: {
         '*': {
-            modal: 'Elogic_secondFooter/js/button-modal',
+            jsModal: 'Elogic_secondFooter/js/js-modal',
+            jqueryModal: 'Elogic_secondFooter/js/jquery-modal',
         }
     }
 };
