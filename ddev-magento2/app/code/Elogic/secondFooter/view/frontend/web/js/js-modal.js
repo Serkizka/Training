@@ -60,17 +60,6 @@ function restartGame() {
 
 buttonSubmit.addEventListener('click', checkGuess);
 buttonRestart.addEventListener('click', restartGame);
-
-
-
-
-// function setGameOver() {
-//     buttonSubmit.disabled = true;
-//     resetButton = document.createElement('button');
-//     resetButton.textContent = 'Play Again?';
-//     document.body.appendChild(resetButton);
-//     resetButton.addEventListener('click', resetGame);
-// }
 // =====================================Game=======================================
 
 
