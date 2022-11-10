@@ -1,7 +1,3 @@
-<?php declare(strict_types=1);
-/** @var \Magento\Framework\View\Element\Template $block */
-?>
-
 <button id="footer-button">
     Open
 </button>
@@ -47,21 +43,4 @@
 <!--    }-->
 <!--</script>-->
 
-<div data-bind="scope: 'startSimple'">
-    <h2 data-bind="text: title"></h2>
-</div>
-
-<script type="text/x-magento-init">
-    {
-        "*": {
-            "Magento_UI/js/core/app": {
-            "components": {
-                "startSimple": {
-                    "component": "Elogic_secondFooter/js/knockout-modal"
-                    }
-                }
-            }
-        }
-    }
-</script>
 

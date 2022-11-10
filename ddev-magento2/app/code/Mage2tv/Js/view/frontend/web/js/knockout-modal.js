@@ -2,8 +2,8 @@ define([], function () {
     'use strict';
 
     return function () {
-    return {
-    title: 'Hello!'
+        return {
+            title: 'Hello oooooooooooooooooooooooooooooooooooooo!'
         }
     }
 });

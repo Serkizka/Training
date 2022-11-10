@@ -1,0 +1,21 @@
+<?php declare(strict_types=1);
+/** @var \Magento\Framework\View\Element\Template $block */
+?>
+
+<div data-bind="scope: 'startSimple'">
+    <h2 data-bind="text: title"></h2>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_UI/js/core/app": {
+                "components": {
+                    "startSimple": {
+                        "component": "Mage2tv_Js/js/knockout-modal"
+                    }
+                }
+            }
+        }
+    }
+</script>
