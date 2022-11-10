@@ -1,1 +1,9 @@
-alert(1)
+define([], function () {
+    'use strict';
+
+    return function () {
+    return {
+    title: 'Hello!'
+        }
+    }
+});
