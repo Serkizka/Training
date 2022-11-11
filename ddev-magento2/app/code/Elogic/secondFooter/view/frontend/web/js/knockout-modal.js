@@ -1,9 +1,9 @@
-define([], function () {
-    'use strict';
-
-    return function () {
-        return {
-            title: 'Hello oooooooooooooooooooooooooooooooooooooo!'
-        }
-    }
-});
+// define([], function () {
+//     'use strict';
+//
+//     return function () {
+//         return {
+//             title: 'Hello oooooooooooooooooooooooooooooooooooooo!'
+//         }
+//     }
+// });
