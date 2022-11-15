@@ -14,7 +14,6 @@ define(['jquery','ko'], function($, ko) {
         };
 
         const viewModel = {
-            title: ko.observable("Previous guesses: "),
             open: function () {
                 $('.modal').addClass('active');
                 $('#overlay').addClass('active');
@@ -25,7 +24,7 @@ define(['jquery','ko'], function($, ko) {
                 if ($('.guessField').val() == guessNumber) {
                     showAnswer(true);
                     showRestart(true);
-                    message("");
+                    message("Previous guesses:");
                 } else if ($('.guessField').val() < guessNumber) {
                     showAnswer(false);
                     message("The number entered was below the random number");
