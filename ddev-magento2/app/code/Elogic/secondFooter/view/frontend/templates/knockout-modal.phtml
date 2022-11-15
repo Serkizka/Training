@@ -1,21 +1,55 @@
-<?php //declare(strict_types=1);
-///** @var \Magento\Framework\View\Element\Template $block */
-//?>
-<!---->
-<!--<div data-bind="scope: 'startSimple'">-->
-<!--    <h2 data-bind="text: title">Privet</h2>-->
-<!--</div>-->
-<!---->
-<!--<script type="text/x-magento-init">-->
-<!--    {-->
-<!--        "*": {-->
-<!--            "Magento_UI/js/core/app": {-->
-<!--                "components": {-->
-<!--                    "startSimple": {-->
-<!--                        "component": "Mage2tv_Js/js/knockout-modal"-->
-<!--                    }-->
-<!--                }-->
-<!--            }-->
-<!--        }-->
-<!--    }-->
-<!--</script>-->
+<?php declare(strict_types=1);
+
+/** @var \Magento\Framework\View\Element\Template $block */
+
+?>
+<!-- 1) simple call-->
+<script type="text/x-magento-init">
+
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "startSimple": {
+                   "component": "Elogic_secondFooter/js/knockout-modal"
+                }
+            }
+        }
+    }
+}
+</script>
+<!--1) simple call-->
+
+<div data-bind="scope: 'startSimple'">
+    <button class="modal-button" id="footer-button" data-bind="click: open">open</button>
+
+    <div class="overlay" id="overlay" data-bind="click: close">
+    </div>
+
+    <div class="modal" id="modal">
+
+        <button id="modal-close" class="modal-button" data-bind="click: close">X</button>
+
+        <div class="modal-form">
+            <label class="modal-form__label" for="guessField">Guess a number from 1 to 50 : </label>
+            <input type="number" id="guessField" class="guessField">
+            <button type="submit" value="Submit guess" class="buttonSubmit modal-button" data-bind="click: check">guess</button>
+        </div>
+
+        <button id="restart-knock" class="restartKnock modal-button" data-bind="click: restart, visible: showRestart">
+            restart game
+        </button>
+
+        <div class="results">
+            <p class="result" data-bind="text: message"></p>
+        </div>
+
+        <div class="answers__wrapper" data-bind="visible: showAnswer">
+            <ul class="answers__array" data-bind="foreach: newArray">
+                <li><p class="answers" data-bind="text: title, text: $data"></p></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+</div>

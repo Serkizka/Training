@@ -1,31 +1,26 @@
-.modal {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: baseline;
-    text-align: left;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    top: 100px;
-    padding: 20px;
-    width: 45%;
-    height: 50%;
-    border: 1px solid #888888;
-    background-color: #fefefe;
-    overflow: hidden;
-    opacity: 0;
-    transform: scale(0);
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out,
-    z-index 0.5s ease-in-out;
-    z-index: -1;
+.modal-button {
+    display: block;
+    text-transform: uppercase;
+    background-color: pink;
+    color: black;
+    box-shadow: 0px 15px 20px black;
+    transform: translateY(0);
+    transition: background-color 0.5s ease 0s, color 0.5s ease 0s, box-shadow 0.5s ease 0s, transform 0.5s;
+
+    &:hover,
+    &:focus {
+        background-color: purple;
+        color: #ffffff;
+        box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+        transform: translateY(-7px);
+    }
 }
 
-.modal.active {
-    opacity: 1;
-    transform: scale(1);
-    z-index: 5;
+#modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #c2a8bf;
 }
 
 #overlay {
@@ -46,10 +41,51 @@
     z-index: 4;
 }
 
-.modal-close {
-    position: absolute;
-    top: 0;
-    right: 20px;
-    font-size: 32px;
+.modal {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 100px;
+    padding: 20px;
+    width: 45%;
+    height: 50%;
+    border: 1px solid #888888;
+    border-radius: 5px;
+    background-color: #fefefe;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, z-index 0.5s ease-in-out;
+    z-index: -1;
+
+    &-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        max-width: 250px;
+        height: 100vh;
+
+        &__label {
+            font-weight: 600;
+        }
+    }
+
+    #guessField {
+        font-weight: 600;
+        &:focus {
+            box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+        }
+    }
 }
 
+.modal.active {
+    opacity: 1;
+    z-index: 5;
+    transform: scale(1);
+}

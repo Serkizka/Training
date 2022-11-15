@@ -6,8 +6,8 @@
     <body>
         <referenceContainer name="before.body.end">
             <container name="newFooter" htmlTag="div" htmlClass="newFooter">
-                <block name="footer2" template="Elogic_secondFooter::footer2.phtml" before="-"/>
-<!--                <block class="Magento\Framework\View\Element\Template" name="customKnock" template="Elogic_secondFooter::knockout-modal.phtml" after="-"/>-->
+<!--                <block name="footer2" template="Elogic_secondFooter::footer2.phtml" before="-"/>-->
+                <block class="Magento\Framework\View\Element\Template" name="customKnock" template="Elogic_secondFooter::knockout-modal.phtml"/>
             </container>
         </referenceContainer>
     </body>
