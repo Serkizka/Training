@@ -28,7 +28,7 @@ let guessArray = [];
 let rightAnswer = document.querySelector('.rightAnswer');
 let lastResult = document.querySelector('.lastResult');
 
-alert(randomNumber);
+console.log(randomNumber);
 
 function checkGuess() {
     let userGuess = Number(guessField.value);
@@ -36,15 +36,18 @@ function checkGuess() {
 
     if (userGuess > randomNumber) {
         lastResult.textContent = "The number entered was greater than the random number";
+        lastResult.style.display = "flex";
     } else if (userGuess < randomNumber) {
         lastResult.textContent = "The number entered was below the random number";
+        lastResult.style.display = "flex";
     } else if (userGuess == randomNumber) {
         let lastEl = guessArray[guessArray.length-1];
         let lastElWithSpan = "<span class='last-el__item'>" + lastEl + "</span>";
         guessArray[guessArray.length-1] = lastElWithSpan;
-        let guessString = guessArray.toString();
-        rightAnswer.innerHTML = "Previous guesses: " + guessArray.join(' ');
 
+        rightAnswer.innerHTML = "Previous guesses:" +  " " + guessArray.join(", ");
+        rightAnswer.style.display = "flex";
+        lastResult.style.display = "none";
         buttonRestart.classList.add("active");
     }
     guessField.value = '';
@@ -52,11 +55,13 @@ function checkGuess() {
 
 function restartGame() {
     guessArray = [];
-    rightAnswer.innerHTML = "";
+    lastResult.style.display = "none";
+    rightAnswer.style.display = "none";
     randomNumber = Math.ceil(Math.random() * 50);
     buttonRestart.classList.remove("active");
     console.log("My random number: " + randomNumber);
 }
+
 
 buttonSubmit.addEventListener('click', checkGuess);
 buttonRestart.addEventListener('click', restartGame);
