@@ -1,0 +1,24 @@
+<!--The 'step_code' value from the .js file should be used-->
+<li id="step_code" class="checkout-name" data-bind="fadeVisible: isVisible">
+    <div class="step-title" data-bind="i18n: 'Full Name'" data-role="title"></div>
+    <div id="checkout-step-name"
+         class="step-content"
+         data-role="content">
+
+        <form id="co-checkout-form" class="form" data-bind="submit: navigateToNextStep" novalidate="novalidate">
+            <div id="checkout-form" class="fieldset address">
+                <!-- ko foreach: getRegion('additional-fieldsets') -->
+                <!-- ko template: getTemplate() --><!-- /ko -->
+                <!--/ko-->
+            </div>
+
+            <div class="actions-toolbar" id="contact-buttons-container">
+            <div class="primary">
+                <button data-role="opc-continue" type="submit" class="button action continue primary">
+                    <span data-bind="i18n: 'Next'"></span>
+                </button>
+            </div>
+            </div>
+        </form>
+    </div>
+</li>

@@ -2,7 +2,8 @@ define([
     'ko',
     'uiComponent',
     'underscore',
-    'Magento_Checkout/js/model/step-navigator'
+    'Magento_Checkout/js/model/step-navigator',
+    'Magento_Ui/js/form/form',
 ], function (ko, Component, _, stepNavigator) {
     'use strict';
 
@@ -12,11 +13,13 @@ define([
      */
     return Component.extend({
         defaults: {
-            template: 'Elogic_checkout/checkout'
+            template: 'Elogic_checkout/checkout',
         },
 
-        // add here your logic to display step,
+        // logic to display step,
         isVisible: ko.observable(true),
+
+        // add here your logic to display step,
 
         /**
          * @returns {*}
@@ -29,9 +32,9 @@ define([
                 // step code will be used as step content id in the component template
                 'step_code',
                 // step alias
-                null,
+                'step_code',
                 // step title value
-                'Step Your Name',
+                'Name',
                 // observable property with logic when display step or hide step
                 this.isVisible,
 
@@ -56,6 +59,7 @@ define([
          * When the user navigates to the custom step via url anchor or back button we_must show step manually here
          */
         navigate: function () {
+            step && step.isVisible(true);
             this.isVisible(true);
         },
 
@@ -63,6 +67,8 @@ define([
          * @returns void
          */
         navigateToNextStep: function () {
+            //validate
+            //form submission
             stepNavigator.next();
         }
     });
