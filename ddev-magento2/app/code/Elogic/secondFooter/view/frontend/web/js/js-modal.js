@@ -41,11 +41,11 @@ function checkGuess() {
         lastResult.textContent = "The number entered was below the random number";
         lastResult.style.display = "flex";
     } else if (userGuess == randomNumber) {
-        let lastEl = guessArray[guessArray.length-1];
-        let lastElWithSpan = "<span class='last-el__item'>" + lastEl + "</span>";
-        guessArray[guessArray.length-1] = lastElWithSpan;
 
-        rightAnswer.innerHTML = "Previous guesses:" +  " " + guessArray.join(", ");
+        let lastEl = guessArray[guessArray.length-1];
+        let lastElWithSpan = "<span class='item-el__last'>" + lastEl + "</span>";
+        guessArray[guessArray.length-1] = lastElWithSpan;
+        rightAnswer.innerHTML = "Previous guesses" + ": " + guessArray.join(",  ");
         rightAnswer.style.display = "flex";
         lastResult.style.display = "none";
         buttonRestart.classList.add("active");
