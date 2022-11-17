@@ -5,20 +5,30 @@
          class="step-content"
          data-role="content">
 
-        <form id="co-checkout-form" class="form" data-bind="submit: navigateToNextStep" novalidate="novalidate">
-            <div id="checkout-form" class="fieldset address">
-                <!-- ko foreach: getRegion('additional-fieldsets') -->
-                <!-- ko template: getTemplate() --><!-- /ko -->
-                <!--/ko-->
-            </div>
+        <form id="co-checkout-form" class="form" name="formName" data-bind="submit: navigateToNextStep" novalidate="novalidate">
+            <fieldset class="fieldset required">
+                <div class="field required">
 
-            <div class="actions-toolbar" id="contact-buttons-container">
-            <div class="primary">
-                <button data-role="opc-continue" type="submit" class="button action continue primary">
-                    <span data-bind="i18n: 'Next'"></span>
-                </button>
-            </div>
-            </div>
+                    <label class="label" for="checkout-input"></label>
+                    <div class="_with-tooltip">
+                        <input id="checkout-input" class="checkout-input" name="inputName"
+                               data-validate="{required:true}"/>
+
+                        <div role="alert"
+                             if="errorValidationMessage().length"
+                             class="message notice">
+                            <span text="errorValidationMessage()"></span>
+                        </div>
+
+                        <div class="primary">
+                        <button data-role="opc-continue" type="submit" class="button action continue primary">
+                            <span data-bind="click: navigateToNextStep, i18n: 'Next'"></span>
+                        </button>
+                        </div>
+
+                    </div>
+                </div>
+            </fieldset>
         </form>
     </div>
 </li>

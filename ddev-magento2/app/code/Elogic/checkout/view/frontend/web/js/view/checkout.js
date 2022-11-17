@@ -3,8 +3,11 @@ define([
     'uiComponent',
     'underscore',
     'Magento_Checkout/js/model/step-navigator',
+    'Magento_Checkout/js/model/shipping-rates-validator',
+    'Magento_Checkout/js/model/shipping-rate-service',
     'Magento_Ui/js/form/form',
-], function (ko, Component, _, stepNavigator) {
+    'mage/translate'
+], function (ko, Component, _, stepNavigator ) {
     'use strict';
 
     /**
@@ -20,6 +23,7 @@ define([
         isVisible: ko.observable(true),
 
         // add here your logic to display step,
+        errorValidationMessage: ko.observable(false),
 
         /**
          * @returns {*}
@@ -69,7 +73,14 @@ define([
         navigateToNextStep: function () {
             //validate
             //form submission
-            stepNavigator.next();
-        }
+            let userText = document.forms["formName"]["inputName"].value;
+            if (userText < 1) {
+                this.errorValidationMessage(
+                'The shipping method is missing. Select the shipping method and try again.'
+                );
+            } else if (userText >= 1) {
+                stepNavigator.next();
+            }
+        },
     });
 });
