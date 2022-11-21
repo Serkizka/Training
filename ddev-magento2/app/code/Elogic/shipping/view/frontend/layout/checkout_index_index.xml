@@ -23,11 +23,13 @@
                                                                         <!-- And this to add your html template  -->
                                                                         <item name="template" xsi:type="string">Elogic_shipping/custom-checkout-form</item>
                                                                     </item>
+
                                                                     <item name="children" xsi:type="array">
 
 
                                                                         <!-- Here we will add the form fields  -->
                                                                     </item>
+
                                                                 </item>
                                                             </item>
                                                         </item>

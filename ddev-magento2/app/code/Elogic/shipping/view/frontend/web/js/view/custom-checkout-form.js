@@ -1,9 +1,19 @@
 /*global define*/
 define([
-    'Magento_Ui/js/form/form'
+    'Magento_Ui/js/form/form',
+    "uiComponent",
+    'ko',
+    'domReady!',
 ], function(Component) {
     'use strict';
     return Component.extend({
+        defaults: {
+            template: 'Elogic_shipping/shipping',
+            defaultTemplate: 'Magento_Checkout/shipping',
+            shippingFormTemplate: 'Magento_Checkout/shipping-address/form',
+            shippingMethodListTemplate: 'Magento_Checkout/shipping-address/shipping-method-list',
+            shippingMethodItemTemplate: 'Magento_Checkout/shipping-address/shipping-method-item',
+        },
         initialize: function () {
             this._super();
             // component initialization logic
@@ -15,18 +25,20 @@ define([
          *
          * This method can have any name.
          */
-        onSubmit: function() {
+        setShippingInformation: function() {
             // trigger form validation
-            this.source.set('params.invalid', false);
-            this.source.trigger('customCheckoutForm.data.validate');
 
             // verify that form data is valid
-            if (!this.source.get('params.invalid')) {
-                // data is retrieved from data provider by value of the customScope property
-                var formData = this.source.get('customCheckoutForm');
-                // do something with form data
-                console.dir(formData);
+            let errorValidationMessage = ko.observable(false);
+            let userText = document.forms["formName"]["inputName"].value;
+            if (userText < 1) {
+                this.errorValidationMessage(
+                    'The shipping method is missing. Select the shipping method and try again.'
+                );
+            } else if (userText >= 1) {
+                stepNavigator.next();
             }
         }
     });
 });
+

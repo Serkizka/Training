@@ -1,16 +1,15 @@
 <div>
-    <form id="custom-checkout-form" class="form" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}">
+    <form id="custom-checkout-form" class="form form-shipping-address" name="formName" submit="setShippingInformation" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}" novalidate="novalidate">
         <fieldset class="fieldset">
-            <legend data-bind="i18n: 'Custom Checkout Form'"></legend>
+            <div class="field required">
+                <label class="label" data-bind="i18n: 'Custom Checkout Form', attr: { for: element.uid }"></label>
+                <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+                    <input id="shipping-input" class="input-text" name="inputName" type="text" data-validate="{required:true}"/>
+                </div>
             <!-- ko foreach: getRegion('custom-checkout-form-fields') -->
             <!-- ko template: getTemplate() --><!-- /ko -->
             <!--/ko-->
+            </div>
         </fieldset>
-        <button type="reset">
-            <span data-bind="i18n: 'Reset'"></span>
-        </button>
-        <button type="button" data-bind="click: onSubmit" class="action">
-            <span data-bind="i18n: 'Submit'"></span>
-        </button>
     </form>
 </div>
