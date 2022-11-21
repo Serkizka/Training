@@ -4,7 +4,7 @@
             <div class="field required">
                 <label class="label" data-bind="i18n: 'Custom Checkout Form', attr: { for: element.uid }"></label>
                 <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
-                    <input id="shipping-input" class="input-text" name="inputName" type="text" data-validate="{required:true}"/>
+                    <input id="shipping-input" class="input-text" name="inputName" type="text" data-validate="{required:true}" aria-required="true" aria-invalid="false"/>
                 </div>
             <!-- ko foreach: getRegion('custom-checkout-form-fields') -->
             <!-- ko template: getTemplate() --><!-- /ko -->
