@@ -2,13 +2,38 @@
 <div id="ajax-response-id">
     <form class="form-group review-form" id="ajaxForm" method="post">
         <fieldset class="fieldset review-fieldset" data-hasrequired="* Required Fields">
-        <div class="field review-field-nickname required">
-        <label class="label" for="EmailInput" required="required">Email address</label>
-            <div class="control">
-        <input type="email" name="email" id="field-email" class="form-control" data-validate="{required:true}" aria-required="true" aria-describedby="emailHelp" placeholder="Enter email">
-            </div>
+
+        <div class="field required">
+        <label class="label" for="field-name" required="required">Name</label>
+        <div class="control">
+            <input type="text" name="name" id="field-name" class="form-control" aria-describedby="emailHelp" placeholder="Name" required>
         </div>
+        </div>
+
+            <div class="field required">
+        <label class="label" for="field-email" required="required">Email address</label>
+            <div class="control">
+        <input type="email" name="email" id="field-email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" required>
+            </div>
+            </div>
+
+            <div class="field required">
+            <label class="label" for="field-phone" required="required">Enter your mobile number</label>
+            <div class="control">
+                <input type="tel" name="phone" id="field-phone" class="form-control" aria-describedby="Phone" placeholder="+380. . . . ." required>
+            </div>
+            </div>
+
+            <div class="field required">
+            <label class="label" for="field-message">Your message:</label>
+            <div class="control">
+                <textarea id="field-message" class="form-control" placeholder="Your message, here . . ."></textarea>
+            </div>
+            </div>
+
         </fieldset>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
 
