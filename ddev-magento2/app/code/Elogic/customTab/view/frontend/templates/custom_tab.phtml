@@ -1,7 +1,14 @@
 
 <div id="ajax-response-id">
-    <form>
-        <input type="text" name="nickname" id="field" class="input-text" data-validate="{required:true}" aria-required="true">
+    <form class="form-group review-form" id="ajaxForm" method="post">
+        <fieldset class="fieldset review-fieldset" data-hasrequired="* Required Fields">
+        <div class="field review-field-nickname required">
+        <label class="label" for="EmailInput" required="required">Email address</label>
+            <div class="control">
+        <input type="email" name="email" id="field-email" class="form-control" data-validate="{required:true}" aria-required="true" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+        </div>
+        </fieldset>
     </form>
 </div>
 

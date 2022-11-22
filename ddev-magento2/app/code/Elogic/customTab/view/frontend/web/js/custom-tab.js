@@ -5,9 +5,9 @@ define([
     "use strict";
 
     function main(config, element) {
-        var $elementvar = $(element);
-        var AjaxUrlcall = config.AjaxUrl;
-        var CurrentProduct = config.CurrentProduct;
+
+        let AjaxUrlcall = config.AjaxUrl;
+        let CurrentProduct = config.CurrentProduct;
 
         $(document).ready(function(){
             setTimeout(function(){
