@@ -1,0 +1,18 @@
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "startSimple": {
+                   "component": "Magento_Checkout/js/free-delivery"
+                }
+            }
+        }
+    }
+}
+</script>
+<div data-bind="scope: 'startSimple'">
+<div class="quote-grandtotal">
+    <span data-bind="text: 'Spend only ' + getGrandTotal() + '$' + ' for free delivery!!!'"></span>
+</div>
+</div>
