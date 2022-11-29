@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                            <!-- appeal to sidebar -->
+                                <item name="sidebar" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="summary" xsi:type="array">
+                                        <item name="children" xsi:type="array">
+                                          <!-- add custom block for checkout sidebar -->
+                                          <item name="totals" xsi:type="array">
+                                            <item name="component" xsi:type="string">Elogic_sidebar-for-custom-checkout/js/view/checkout-sidebar</item>
+                                            <item name="displayArea" xsi:type="string">summary</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="template" xsi:type="string">Elogic_sidebar-for-custom-checkout/checkout-sidebar
+                                                </item>
+                                            </item>
+                                          </item>
+                                          <!-- add custom block for checkout sidebar -->
+                                          
+                                          <!--  block order for summary -->
+                                          <item name="cart_items" xsi:type="array">
+                                              <item name="sortOrder" xsi:type="string">0</item>
+                                          </item>
+                                          <!--  block order for summary -->
+                                        </item>
+
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>
