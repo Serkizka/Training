@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+<!--<script src="Elogic_secondFooter::js/button-modal.js"/>-->
+    </head>
+    <body>
+        <referenceContainer name="before.body.end">
+            <container name="newFooter" htmlTag="div" htmlClass="newFooter">
+                <block name="footer2" template="Elogic_secondFooter::footer2.phtml" before="-"/>
+<!--                <block class="Magento\Framework\View\Element\Template" name="customKnock" template="Elogic_secondFooter::knockout-modal.phtml"/>-->
+            </container>
+        </referenceContainer>
+    </body>
+</page>
